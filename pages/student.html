@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Student Portal</title>
+    <link rel="stylesheet" href="../assests/css/student.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Student Logo" class="nav-logo">
+            <span>Student Portal</span>
+        </div>
+        <div class="nav-controls">
+            <span class="welcome-text">Welcome, <span id="userDisplay"></span>!</span>
+            <button onclick="logout()" class="logout-btn" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </button>
+            <button class="hamburger-btn" id="hamburgerBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <div class="menu-container" id="menuContainer">
+        <div class="menu-content">
+            <div class="menu-header">
+                <h2>Menu</h2>
+                <button class="close-btn" id="closeBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <ul class="menu-items">
+                <li class="active"><a href="#dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="#academics"><i class="fas fa-graduation-cap"></i> Academics</a></li>
+                <li><a href="#profile"><i class="fas fa-user"></i> Profile</a></li>
+                <li><a href="#finances"><i class="fas fa-money-bill"></i> Finances</a></li>
+                <li><a href="#library"><i class="fas fa-book"></i> Library</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main class="main-content" id="mainContent">
+        <section id="dashboard" class="content-section active">
+            <h1>Welcome to Your Dashboard</h1>
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <h3>Timetable Snapshot</h3>
+                    <div class="timetable-list">
+                        <div class="timetable-item">
+                            <div class="time">09:00 AM</div>
+                            <div class="class-info">
+                                <div class="class-name">Mathematics</div>
+                                <div class="class-details">Room 101 | Prof. Smith</div>
+                            </div>
+                        </div>
+                        <div class="timetable-item">
+                            <div class="time">10:30 AM</div>
+                            <div class="class-info">
+                                <div class="class-name">Computer Science</div>
+                                <div class="class-details">Room 205 | Prof. Johnson</div>
+                            </div>
+                        </div>
+                        <div class="timetable-item">
+                            <div class="time">01:00 PM</div>
+                            <div class="class-info">
+                                <div class="class-name">Physics</div>
+                                <div class="class-details">Room 304 | Prof. Williams</div>
+                            </div>
+                        </div>
+                        <div class="timetable-item">
+                            <div class="time">02:30 PM</div>
+                            <div class="class-info">
+                                <div class="class-name">English Literature</div>
+                                <div class="class-details">Room 402 | Prof. Brown</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <h3>Recent Notifications</h3>
+                    <div class="notifications-list">
+                        <div class="notification-item">
+                            <div class="notification-icon">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <div class="notification-content">
+                                <div class="notification-title">New Assignment Posted</div>
+                                <div class="notification-details">Computer Science Assignment 3 due in 3 days</div>
+                                <div class="notification-time">2 hours ago</div>
+                            </div>
+                        </div>
+                        <div class="notification-item">
+                            <div class="notification-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="notification-content">
+                                <div class="notification-title">Exam Schedule Updated</div>
+                                <div class="notification-details">Mid-term exams starting next week</div>
+                                <div class="notification-time">Yesterday</div>
+                            </div>
+                        </div>
+                        <div class="notification-item">
+                            <div class="notification-icon">
+                                <i class="fas fa-money-bill-wave"></i>
+                            </div>
+                            <div class="notification-content">
+                                <div class="notification-title">Fee Payment Reminder</div>
+                                <div class="notification-details">Last date for semester fee payment is approaching</div>
+                                <div class="notification-time">2 days ago</div>
+                            </div>
+                        </div>
+                        <div class="notification-item">
+                            <div class="notification-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="notification-content">
+                                <div class="notification-title">Library Book Due</div>
+                                <div class="notification-details">"Introduction to Algorithms" is due tomorrow</div>
+                                <div class="notification-time">3 days ago</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="academics" class="content-section">
+            <h1>Academics</h1>
+            <div class="academics-grid">
+                <div class="academics-card">
+                    <h3><i class="fas fa-book-open"></i> Courses</h3>
+                    <div class="course-list">
+                        <div class="course-item">
+                            <div class="course-name">Mathematics 101</div>
+                            <div class="course-schedule">Mon, Wed, Fri | 9:00 AM - 10:30 AM</div>
+                            <div class="course-progress">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 75%"></div>
+                                </div>
+                                <span>75% Complete</span>
+                            </div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-name">Computer Science 201</div>
+                            <div class="course-schedule">Tue, Thu | 11:00 AM - 12:30 PM</div>
+                            <div class="course-progress">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 60%"></div>
+                                </div>
+                                <span>60% Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="academics-card">
+                    <h3><i class="fas fa-chart-bar"></i> Grades</h3>
+                    <div class="grades-list">
+                        <div class="grade-item">
+                            <div class="subject">5th Semester SGPA</div>
+                            <div class="grade">9.98</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="academics-card">
+                    <h3><i class="fas fa-tasks"></i> Assignments</h3>
+                    <div class="assignments-list">
+                        <div class="assignment-header">
+                            <div class="header-title">Title</div>
+                            <div class="header-due">Due Date</div>
+                            <div class="header-status">Status</div>
+                        </div>
+                        <div class="assignment-item">
+                            <div class="assignment-name">CS201 Project - Web Development</div>
+                            <div class="assignment-due">Oct 20, 2023</div>
+                            <div class="assignment-status pending">Pending</div>
+                        </div>
+                        <div class="assignment-item">
+                            <div class="assignment-name">Mathematics Quiz - Calculus</div>
+                            <div class="assignment-due">Oct 18, 2023</div>
+                            <div class="assignment-status completed">Completed</div>
+                        </div>
+                        <div class="assignment-item">
+                            <div class="assignment-name">Physics Lab Report</div>
+                            <div class="assignment-due">Oct 22, 2023</div>
+                            <div class="assignment-status pending">Pending</div>
+                        </div>
+                        <div class="assignment-item">
+                            <div class="assignment-name">English Essay</div>
+                            <div class="assignment-due">Oct 25, 2023</div>
+                            <div class="assignment-status pending">Pending</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="academics-card">
+                    <h3><i class="fas fa-calendar"></i> Calendar</h3>
+                    <div class="calendar-container">
+                        <div class="calendar-header">
+                            <div class="header-date">Date</div>
+                            <div class="header-event">Event</div>
+                            <div class="header-time">Time</div>
+                        </div>
+                        <div class="calendar-events">
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <div class="date-day">15</div>
+                                    <div class="date-month">Oct</div>
+                                </div>
+                                <div class="event-details">
+                                    <div class="event-title">Mid-term Exams Begin</div>
+                                    <div class="event-description">All subjects mid-term examination starts</div>
+                                </div>
+                                <div class="event-time">All Day</div>
+                            </div>
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <div class="date-day">20</div>
+                                    <div class="date-month">Oct</div>
+                                </div>
+                                <div class="event-details">
+                                    <div class="event-title">Project Submission Deadline</div>
+                                    <div class="event-description">Final submission for all semester projects</div>
+                                </div>
+                                <div class="event-time">11:59 PM</div>
+                            </div>
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <div class="date-day">25</div>
+                                    <div class="date-month">Oct</div>
+                                </div>
+                                <div class="event-details">
+                                    <div class="event-title">Semester Break</div>
+                                    <div class="event-description">Mid-semester vacation period</div>
+                                </div>
+                                <div class="event-time">All Day</div>
+                            </div>
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <div class="date-day">30</div>
+                                    <div class="date-month">Oct</div>
+                                </div>
+                                <div class="event-details">
+                                    <div class="event-title">Career Fair</div>
+                                    <div class="event-description">Annual university career fair and networking event</div>
+                                </div>
+                                <div class="event-time">10:00 AM - 4:00 PM</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="profile" class="content-section">
+            <h1>Profile</h1>
+            <div class="profile-grid">
+                <div class="profile-card">
+                    <h3><i class="fas fa-user-circle"></i> Personal Information</h3>
+                    <div class="profile-info">
+                        <div class="image-upload-section">
+                            <div class="current-image">
+                                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile Image" id="profileImage">
+                            </div>
+                            <div class="upload-controls">
+                                <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                                <button class="upload-btn" id="uploadBtn">
+                                    <i class="fas fa-upload"></i> Upload New Image
+                                </button>
+                                <p class="upload-hint">Max file size: 2MB. Supported formats: JPG, PNG</p>
+                            </div>
+                        </div>
+                        <div class="info-section">
+                            <div class="section-title">Basic Information</div>
+                            <div class="info-item">
+                                <div class="info-label">Full Name</div>
+                                <div class="info-value" contenteditable="false">John Doe</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Student ID</div>
+                                <div class="info-value" contenteditable="false">2023001</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Date of Birth</div>
+                                <div class="info-value" contenteditable="false">January 15, 2000</div>
+                            </div>
+                        </div>
+                        <div class="info-section">
+                            <div class="section-title">Contact Information</div>
+                            <div class="info-item">
+                                <div class="info-label">Email</div>
+                                <div class="info-value" contenteditable="false">john.doe@university.edu</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Phone</div>
+                                <div class="info-value" contenteditable="false">+1 (555) 123-4567</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Emergency Contact</div>
+                                <div class="info-value" contenteditable="false">Jane Doe (+1 (555) 987-6543)</div>
+                            </div>
+                        </div>
+                        <div class="info-section">
+                            <div class="section-title">Academic Information</div>
+                            <div class="info-item">
+                                <div class="info-label">Program</div>
+                                <div class="info-value" contenteditable="false">Bachelor of Science in Computer Science</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Current Semester</div>
+                                <div class="info-value" contenteditable="false">5th Semester</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Expected Graduation</div>
+                                <div class="info-value" contenteditable="false">May 2024</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="edit-controls">
+                        <button class="edit-profile-btn" id="editBtn">Edit Profile</button>
+                        <button class="save-profile-btn" id="saveBtn" style="display: none;">Save Changes</button>
+                        <button class="cancel-edit-btn" id="cancelBtn" style="display: none;">Cancel</button>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <h3><i class="fas fa-shield-alt"></i> Security Settings</h3>
+                    <div class="security-settings">
+                        <div class="security-section">
+                            <div class="section-title">Account Security</div>
+                            <div class="security-item">
+                                <div class="security-info">
+                                    <div class="security-name">Password</div>
+                                    <div class="security-status">Last changed: 30 days ago</div>
+                                </div>
+                                <button class="security-btn">Change Password</button>
+                            </div>
+                            <div class="security-item">
+                                <div class="security-info">
+                                    <div class="security-name">Two-Factor Authentication</div>
+                                    <div class="security-status">Enabled</div>
+                                </div>
+                                <button class="security-btn">Manage 2FA</button>
+                            </div>
+                        </div>
+                        <div class="security-section">
+                            <div class="section-title">Login Security</div>
+                            <div class="security-item">
+                                <div class="security-info">
+                                    <div class="security-name">Login History</div>
+                                    <div class="security-status">Last login: Today, 9:30 AM</div>
+                                </div>
+                                <button class="security-btn">View History</button>
+                            </div>
+                            <div class="security-item">
+                                <div class="security-info">
+                                    <div class="security-name">Active Sessions</div>
+                                    <div class="security-status">2 active sessions</div>
+                                </div>
+                                <button class="security-btn">Manage Sessions</button>
+                            </div>
+                        </div>
+                        <div class="security-section">
+                            <div class="section-title">Privacy Settings</div>
+                            <div class="security-item">
+                                <div class="security-info">
+                                    <div class="security-name">Profile Visibility</div>
+                                    <div class="security-status">Visible to University Staff</div>
+                                </div>
+                                <button class="security-btn">Change Settings</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="finances" class="content-section">
+            <h1>Finances</h1>
+            <div class="finances-grid">
+                <div class="finances-card">
+                    <h3><i class="fas fa-file-invoice-dollar"></i> Tuition & Fees</h3>
+                    <div class="fees-container">
+                        <div class="fees-summary">
+                            <div class="summary-header">
+                                <div class="header-item">Fee Type</div>
+                                <div class="header-item">Amount</div>
+                                <div class="header-item">Status</div>
+                            </div>
+                            <div class="fee-item">
+                                <div class="fee-name">Tuition Fee</div>
+                                <div class="fee-amount">$5,000.00</div>
+                                <div class="fee-status paid">Paid</div>
+                            </div>
+                            <div class="fee-item">
+                                <div class="fee-name">Library Fee</div>
+                                <div class="fee-amount">$100.00</div>
+                                <div class="fee-status paid">Paid</div>
+                            </div>
+                            <div class="fee-item">
+                                <div class="fee-name">Lab Fee</div>
+                                <div class="fee-amount">$250.00</div>
+                                <div class="fee-status pending">Pending</div>
+                            </div>
+                            <div class="fee-item">
+                                <div class="fee-name">Sports Fee</div>
+                                <div class="fee-amount">$50.00</div>
+                                <div class="fee-status paid">Paid</div>
+                            </div>
+                        </div>
+                        <div class="fees-total">
+                            <div class="total-row">
+                                <div class="total-label">Total Paid:</div>
+                                <div class="total-amount">$5,150.00</div>
+                            </div>
+                            <div class="total-row">
+                                <div class="total-label">Total Due:</div>
+                                <div class="total-amount">$250.00</div>
+                            </div>
+                            <div class="total-row highlight">
+                                <div class="total-label">Balance:</div>
+                                <div class="total-amount">$250.00</div>
+                            </div>
+                        </div>
+                        <button class="pay-btn">Pay Now</button>
+                    </div>
+                </div>
+                <div class="finances-card">
+                    <h3><i class="fas fa-hand-holding-usd"></i> Financial Aid</h3>
+                    <div class="aid-container">
+                        <div class="aid-summary">
+                            <div class="summary-header">
+                                <div class="header-item">Aid Type</div>
+                                <div class="header-item">Amount</div>
+                                <div class="header-item">Status</div>
+                            </div>
+                            <div class="aid-item">
+                                <div class="aid-name">Merit Scholarship</div>
+                                <div class="aid-amount">$2,000.00</div>
+                                <div class="aid-status">Approved</div>
+                            </div>
+                            <div class="aid-item">
+                                <div class="aid-name">Federal Grant</div>
+                                <div class="aid-amount">$1,500.00</div>
+                                <div class="aid-status">Approved</div>
+                            </div>
+                            <div class="aid-item">
+                                <div class="aid-name">Work-Study Program</div>
+                                <div class="aid-amount">$1,000.00</div>
+                                <div class="aid-status">Pending</div>
+                            </div>
+                        </div>
+                        <div class="aid-total">
+                            <div class="total-row">
+                                <div class="total-label">Total Approved:</div>
+                                <div class="total-amount">$3,500.00</div>
+                            </div>
+                            <div class="total-row">
+                                <div class="total-label">Pending Aid:</div>
+                                <div class="total-amount">$1,000.00</div>
+                            </div>
+                            <div class="total-row highlight">
+                                <div class="total-label">Total Aid:</div>
+                                <div class="total-amount">$4,500.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="library" class="content-section">
+            <h1>Library</h1>
+            <div class="library-grid">
+                <div class="library-card">
+                    <h3><i class="fas fa-search"></i> Catalog</h3>
+                    <div class="library-container">
+                        <div class="search-box">
+                            <input type="text" placeholder="Search books, journals, articles...">
+                            <button class="search-btn"><i class="fas fa-search"></i></button>
+                        </div>
+                        <div class="category-filter">
+                            <button class="filter-btn active">All</button>
+                            <button class="filter-btn">Books</button>
+                            <button class="filter-btn">Journals</button>
+                            <button class="filter-btn">E-Resources</button>
+                        </div>
+                        <div class="popular-books">
+                            <div class="section-title">Popular Books</div>
+                            <div class="book-item">
+                                <div class="book-cover">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div class="book-info">
+                                    <div class="book-title">Introduction to Algorithms</div>
+                                    <div class="book-author">Thomas H. Cormen</div>
+                                    <div class="book-details">
+                                        <span class="book-category">Computer Science</span>
+                                        <span class="book-availability available">Available</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="book-item">
+                                <div class="book-cover">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div class="book-info">
+                                    <div class="book-title">Clean Code</div>
+                                    <div class="book-author">Robert C. Martin</div>
+                                    <div class="book-details">
+                                        <span class="book-category">Programming</span>
+                                        <span class="book-availability available">Available</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="library-card">
+                    <h3><i class="fas fa-book-reader"></i> Borrowed Items</h3>
+                    <div class="borrowed-container">
+                        <div class="borrowed-items">
+                            <div class="borrowed-item">
+                                <div class="item-info">
+                                    <div class="item-title">Introduction to Algorithms</div>
+                                    <div class="item-details">
+                                        <span class="item-due">Due: Oct 20, 2023</span>
+                                        <span class="item-status">2 days remaining</span>
+                                    </div>
+                                </div>
+                                <button class="renew-btn">Renew</button>
+                            </div>
+                            <div class="borrowed-item">
+                                <div class="item-info">
+                                    <div class="item-title">Clean Code</div>
+                                    <div class="item-details">
+                                        <span class="item-due">Due: Oct 25, 2023</span>
+                                        <span class="item-status">7 days remaining</span>
+                                    </div>
+                                </div>
+                                <button class="renew-btn">Renew</button>
+                            </div>
+                            <div class="borrowed-item overdue">
+                                <div class="item-info">
+                                    <div class="item-title">Design Patterns</div>
+                                    <div class="item-details">
+                                        <span class="item-due">Due: Oct 10, 2023</span>
+                                        <span class="item-status">Overdue</span>
+                                    </div>
+                                </div>
+                                <button class="renew-btn">Renew</button>
+                            </div>
+                        </div>
+                        <div class="fines-summary">
+                            <div class="summary-title">Fines Summary</div>
+                            <div class="fine-item">
+                                <div class="fine-label">Overdue Fine</div>
+                                <div class="fine-amount">$5.00</div>
+                            </div>
+                            <div class="fine-item">
+                                <div class="fine-label">Processing Fee</div>
+                                <div class="fine-amount">$0.00</div>
+                            </div>
+                            <div class="fine-total">
+                                <div class="total-label">Total Fines:</div>
+                                <div class="total-amount">$5.00</div>
+                            </div>
+                            <button class="pay-fine-btn">Pay Fines</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../assests/js/student.js"></script>
+</body>
+</html>
