@@ -64,3 +64,8 @@ This project is licensed under the MIT License. Feel free to use and modify it a
 ## Contact
 
 For any queries or suggestions, please contact us at [info@lunaris.edu](mailto:info@lunaris.edu).
+
+## Login
+To login in student portal/student corner -- 
+username - admin
+password - admin
