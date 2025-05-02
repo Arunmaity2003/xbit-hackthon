@@ -57,15 +57,15 @@ The project is organized as follows:
 - Enhance responsiveness for better mobile compatibility.
 - Add more interactive features like live chat support.
 
-## License
 
-This project is licensed under the MIT License. Feel free to use and modify it as needed.
 
-## Contact
-
-For any queries or suggestions, please contact us at [info@lunaris.edu](mailto:info@lunaris.edu).
+.
 
 ## Login
 To login in student portal/student corner -- 
 username - admin
 password - admin
+
+## License
+
+This project is licensed under the MIT License. Feel free to use and modify it as needed.
